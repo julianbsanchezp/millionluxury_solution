@@ -1,20 +1,63 @@
-MillionLuxury - Technical Test Skeleton
-Generated: 2025-10-02T15:25:30.879306
+# Million Luxury API 🚀
 
-This archive contains a ready-to-use skeleton and scripts to scaffold a .NET solution implementing:
-- Hexagonal / Clean architecture folders (Domain, Application, Infrastructure, Api)
-- Sample Domain entity, repository interface, Infrastructure repository sketch
-- A minimal Web API Program.cs and a Properties controller
-- nUnit test project placeholder
-- Front folder placeholder for React app
-- Scripts to scaffold the actual .NET projects using dotnet CLI and to overwrite files in place
+Proyecto técnico desarrollado con **.NET 8**, siguiendo principios de **arquitectura hexagonal**, **SOLID** y aplicando buenas prácticas modernas de desarrollo de software.  
 
-Requirements: .NET 6 SDK or later, Node.js (for Front), Docker (optional).
+## 🏗️ Tecnologías utilizadas
+- **.NET 8 / C#**
+- **ASP.NET Core Web API**
+- **Entity Framework Core (InMemory / SQL Server)**
+- **React (frontend - carpeta `/front`)**
+- **Docker**
+- **MongoDB y SQL Server**
+- **xUnit y FluentAssertions** (pruebas unitarias)
+- **Scrum** (metodología de trabajo colaborativo)
 
-Instructions:
-1. Unzip this archive.
-2. Run the script create_solution.sh (Linux/macOS) or create_solution.ps1 (Windows PowerShell).
-   These scripts will create the dotnet projects and copy the template files into the created projects.
-3. Open Million.Luxury.sln in Visual Studio or VS Code. Run 'dotnet restore' then 'dotnet build'.
-4. To run API locally: dotnet run --project src/Million.Luxury.Api
-5. Front: see front/README_front.md
+## 📂 Estructura del proyecto
+millionluxury_solution/
+│── src/
+│ ├── Million.Luxury.Domain/ # Entidades y lógica de dominio
+│ ├── Million.Luxury.Application/ # Casos de uso (puertos y servicios)
+│ ├── Million.Luxury.Infrastructure/# Repositorios (EF Core)
+│ ├── Million.Luxury.Api/ # API REST (controladores)
+│ └── Million.Luxury.Tests/ # Pruebas unitarias
+│── front/ # Frontend en React
+│── docker/ # Configuración para despliegue
+│── README.md
+│── Million.Luxury.sln
+
+
+## ⚙️ Cómo levantar el proyecto
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/julianbsanchezp/millionluxury_solution.git
+cd millionluxury_solution
+
+2. Restaurar dependencias
+dotnet restore
+
+3. Compilar solución
+
+dotnet build
+4. Ejecutar la API 
+dotnet run --project src/Million.Luxury.Api
+
+La API quedará disponible en:
+http://localhost:5052/swagger
+
+5. Ejecutar pruebas unitarias
+dotnet test
+6. Frontend (React)
+cd front
+npm install
+npm start
+
+📑 Endpoints principales
+
+POST /api/properties → Crear propiedad
+
+GET /api/properties → Listar propiedades
+
+PUT /api/properties/{id}/price → Cambiar precio de propiedad
+
+
